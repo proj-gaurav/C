@@ -20,7 +20,7 @@ int main()
 {
     double a,b;
     cin>>a>>b;
-    cout<<fixed;  //Works only for Digits after decimal
+    cout<<fixed;  //It will fix numbers before Dicimal point
     cout<<setprecision(4)<<sub(a,b);
     return 0;
 }
