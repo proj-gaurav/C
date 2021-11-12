@@ -3,6 +3,7 @@
 #include <iomanip> //setprecision for digits after decimal
 using namespace std;
 
+// Using Functions //
 double sum(double a, double b)
 {
     return (a + b);
@@ -28,8 +29,8 @@ int main()
     cin >> a;
     cout << "Enter Second Value : ";
     cin >> b;
-    cout << fixed; //Works only for Digits after decimal
-    cout << setprecision(4);
+    cout << fixed; //Works only for Digits after decimal //
+    cout << setprecision(4); //It will fix 4 digits after decimal //
     cout << "Enter Your Operator : ";
     cin >> opr;
     
