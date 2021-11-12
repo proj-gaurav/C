@@ -19,10 +19,6 @@ double divide(double a, double b)
 {
     return (a / b);
 }
-// double modulo(double a, double b)
-// {
-//     return (a % b);
-// }
 
 int main()
 {
@@ -37,6 +33,7 @@ int main()
     cout << "Enter Your Operator : ";
     cin >> opr;
     
+    // Using If-else for operators //
     if (opr=='+')
     {
         result = sum(a, b);
