@@ -1,0 +1,141 @@
+#include <iostream>
+#include <cmath>
+#include <math.h>
+#include <stdio.h>
+#include <iomanip>
+using namespace std;
+
+// Using Functions //
+double sum(double a, double b)
+{
+    return (a + b);
+}
+double sub(double a, double b)
+{
+    return (a - b);
+}
+double multiply(double a, double b)
+{
+    return (a * b);
+}
+double divide(double a, double b)
+{
+    return (a / b);
+}
+
+// For converting double to str
+void reverse(char* str, int len)
+{
+	int i = 0, j = len - 1, temp;
+	while (i < j) {
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		i++;
+		j--;
+	}
+}
+
+int intToStr(int x, char str[], int d)
+{
+	int i = 0;
+	while (x) {
+		str[i++] = (x % 10) + '0';
+		x = x / 10;
+	}
+
+	while (i < d)
+		str[i++] = '0';
+
+	reverse(str, i);
+	str[i] = '\0';
+	return i;
+}
+
+void ftoa(double n, char* res, int afterpoint)
+{
+	// Extract integer part
+	int ipart = (int)n;
+
+	// Extract floating part
+	double fpart = n - (double)ipart;
+
+	// convert integer part to string
+	int i = intToStr(ipart, res, 0);
+
+	// check for display option after point
+	if (afterpoint != 0) {
+		res[i] = '.'; // add dot
+
+		fpart = fpart * pow(10, afterpoint);
+
+		intToStr((int)fpart, res + i + 1, afterpoint);
+	}
+}
+
+
+int main()
+{
+    start:
+    double a, b, result;
+    char opr;
+    cout << "Enter First Value : ";
+    cin >> a;
+    cout << "Enter Second Value : ";
+    cin >> b;
+    cout << "Enter Your Operator : ";
+    cin >> opr;
+    cout<<endl;
+
+    char res[20];
+    cout<<fixed;
+    cout<<setprecision(4);
+	ftoa(result, res, 4);
+
+    // Using If-else for operators //
+    if (opr == '+')
+    {
+        result = sum(a, b);
+        cout << "Your Answer : " << result << endl;
+    }
+    else if (opr == '-')
+    {
+        result = sub(a, b);
+        cout << "Your Answer : " << result << endl;
+    }
+    else if (opr == '*')
+    {
+        result = multiply(a, b);
+        cout << "Your Answer : " << result << endl;
+    }
+    else if (opr == '/')
+    {
+        result = divide(a, b);
+        cout << "Your Answer : " << result << endl;
+    }
+
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    char retry ;
+    cout << "Do you want to retry (y/n) : ";
+    cin >> retry ;
+
+    if (retry == 'y')
+    {
+        cout<<endl;
+        cout<<endl;
+        goto start;
+    }
+    else if(retry == 'n')
+    {
+        cout<<endl;
+        cout<<endl;
+        cout << "Thank you! :)";
+        cout<<endl;
+        cout<<endl;
+    }
+    cout << endl;
+    return 0;
+}
