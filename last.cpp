@@ -63,11 +63,11 @@ numerator_initialize:
     }
 
 numerator_calculations:
-    int ne = result_n;
-    string int_ne_str = to_string(ne);
+    int ne = result_n;      // Converting Double to Int
+    string int_ne_str = to_string(ne);    // Converting Int to String
     int ne_divisor = int_ne_str.length() - 1;
-    double nu_divisor = result_n / pow(10, ne_divisor);
-    cout << nu_divisor << " x 10^" << ne_divisor << endl;
+    double nu_divisor = result_n / pow(10, ne_divisor);      //Reconverting Int to Double and Dividing it by 10 to power d_divisor
+    cout << nu_divisor << " x 10^" << ne_divisor << endl;        // Final Output
 
 denominator_initialize:
 
@@ -107,12 +107,13 @@ denominator_initialize:
     }
 
 denominator_calculations:
-    int de = result_d;
-    string int_de_str = to_string(de);
+    int de = result_d;      // Converting Double to Int
+    string int_de_str = to_string(de);    // Converting Int to String
     int d_divisor = int_de_str.length() - 1;
-    double du_divisor = result_d / pow(10, d_divisor);
-    cout << du_divisor << " x 10^" << d_divisor << endl;
+    double du_divisor = result_d / pow(10, d_divisor);      //Reconverting Int to Double and Dividing it by 10 to power d_divisor
+    cout << du_divisor << " x 10^" << d_divisor << endl;        // Final Output
 
+    // Making loop for the program
     double result_m;
 
     cout << endl;
