@@ -113,7 +113,7 @@ start:
     cout << endl;
 
     cout << "For Denomenator ---> " << endl;
-    
+
 // Denomenator Initialization
     double a_d, b_d, c_d, d_d, result1_d, result2_d, result3_d, result4_d;
     char opr1_d, opr2_d, opr3_d, opr4_d;
@@ -198,9 +198,14 @@ start:
     cout << "Your Denomenator ans is ::  ";
     cout << decimal_answer_d << " x 10^" << power_d << endl;
 
+// For main answer -->
     double final_answer = decimal_answer_n / decimal_answer_d;
     cout << endl;
     cout << endl;
     cout << endl;
     cout << "Your Final Answer is :: " << final_answer << endl;
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
 }
